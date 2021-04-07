@@ -2,6 +2,7 @@ package com.example.tiki_layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,12 +14,19 @@ public class MainActivity extends AppCompatActivity implements SendingData {
         setContentView(R.layout.activity_main);
         txtTotal = findViewById(R.id.txtTotal);
 
+
     }
 
     @Override
     public void sendData(String data) {
-        txtTotal.setText(data);
-        getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,BlankFragment.newInstance(data)).commit();
+        int d1= Integer.parseInt(data) * 148000;
+        txtTotal.setText(String.valueOf(d1)+" đ");
+
+        getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,BelowFragment.newInstance(String.valueOf(d1)+" đ")).commit();
+
+
+
+
     }
 
 }

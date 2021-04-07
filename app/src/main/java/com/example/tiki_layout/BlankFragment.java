@@ -23,11 +23,11 @@ public class BlankFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
+
 
 
     public BlankFragment() {
@@ -63,7 +63,7 @@ public class BlankFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -85,7 +85,7 @@ public class BlankFragment extends Fragment {
                     txtQuantity.setText(String.valueOf(quatity));
                 }
 
-                //sendingData.sendData(String.valueOf(quatity));
+                sendingData.sendData(String.valueOf(quatity));
             }
         });
         ImageButton imgBtnRemove = view.findViewById(R.id.imgBtnRemove);
@@ -99,9 +99,7 @@ public class BlankFragment extends Fragment {
                         quatity--;
                         txtQuantity.setText(String.valueOf(quatity));
                 }
-
-
-                //sendingData.sendData(String.valueOf(quatity));
+                sendingData.sendData(String.valueOf(quatity));
             }
         });
         return view;
